@@ -35,7 +35,7 @@ function addNewTask(is_anonymous=true) {
             </div>
             <div class="content-buttons">
                 <button type="button" class="confirmAddTask" onclick="confirmAddTask(${is_anonymous})">
-                    <i class="far fa-save green"></i> Salvar
+                    <i class="far fa-save green"></i> Adicionar
                 </button>
                 <button type="button" class="cancelAdd" onclick="cancelAdd()">
                     <i class="far fa-window-close red"></i> Fechar
@@ -121,7 +121,7 @@ function deleteTask(id, is_anonymous = true) {
         </div>
         <div class="content-buttons">
             <button type="button" class="confirmDelete" onclick="confirmDeleteTask(${id}, ${is_anonymous})">
-                <i class="far fa-save green"></i> Salvar
+                <i class="far fa-save green"></i> Confirmar
             </button>
             <button type="button" class="cancelDelete" onclick="cancelDelete()">
                 <i class="far fa-window-close red"></i> Fechar
