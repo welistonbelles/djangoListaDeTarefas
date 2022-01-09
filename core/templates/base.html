@@ -1,0 +1,89 @@
+{% load static %}
+{% load bootstrap4 %}
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="https://kit.fontawesome.com/25828b76a5.js" crossorigin="anonymous"></script>
+    <script src="{% static 'js/functions.js' %}"></script>
+</head>
+    <body>
+        <header>
+            <div class="content">
+                <div class="title">
+                    <a href="http://localhost:8000/"><h1>Home</h1></a>
+                    {% if not user.is_anonymous %}
+                        <a href="http://localhost:8000/admin/"><h1>Admin</h1></a>
+                        <a href="http://localhost:8000/documentation/"><h1>Documentation</h1></a>
+                    {% endif %}
+                </div>
+                <div class="login-area">
+                    {% if user.is_anonymous %}
+                        <div class="button-login">
+                            <button onclick="doLogin()">Login</button>
+                        </div>
+                    {% else %}
+                        <div class="button-logout">
+                            <button onclick="doLogout()">Logout</button>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </header>
+
+        <div class="app">
+            <div class="content-actions-task">
+                
+                    
+                
+            </div>
+            <div class="content-actions">
+                {% if not user.is_anonymous %}
+                    <button onclick="addNewTask(false)"> <i class="fas fa-plus green"></i> Adicionar Tarefa</button>
+                {% endif %} 
+            </div>
+            <div class="content">
+                {% block content %}
+                    
+                {% endblock %}
+            </div>
+        </div>
+        <footer>
+            <div class="content-footer">
+                <div class="left">
+                    <div class="title">
+                        <h4>Contato:</h4>
+                    </div>
+                    <div class="fone">
+                        <h5>Telefone: </h5>
+                        <h6>(53) 99999-2129</h6>
+                    </div>
+                    <div class="email">
+                        <h5>E-mail: </h5>
+                        <h6> weliston2012@gmail.com</h6>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="title">
+                        <h4>Redes Sociais:</h4>
+                    </div>
+                    <div class="linkedin">
+                        <a href="https://www.linkedin.com/in/weliston-belles-472038214/" target="_blank"><h5>Linkedin </h5></a>
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <div class="github">
+                        <a href="https://github.com/welistonbelles/" target="_blank"><h5>Github</h5></i></a>
+                        <i class="fab fa-github"></i>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    {% bootstrap_javascript jquery='full' %} 
+    </body>
+</html>

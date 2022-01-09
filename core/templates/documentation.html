@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block content %}
+    <div class="documentation">
+        <h1>Routes</h1>
+        <table>
+            <thead>
+                <th>Method</th>
+                <th>Route</th>
+                <th>Description</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="yellow bold">GET</td>
+                    <td>/api/v1/tasks/</td>
+                    <td>Retorna um json contendo informações das primeiras 8 tarefas.</td>
+                </tr>
+                <tr>
+                    <td class="yellow bold">GET</td>
+                    <td>/api/v1/tasks/<strong class="yellow">{id}</strong></td>
+                    <td>Retorna um json contendo informações sobre a tarefa solicitada.</td>
+                </tr>
+                <tr>
+                    <td class="green bold">POST</td>
+                    <td>/api/v1/tasks/</td>
+                    <td>Envia uma nova tarefa para cadastro.</td>
+                </tr>
+                <tr>
+                    <td class="blue bold">PUT</td>
+                    <td>/api/v1/tasks/<strong class="yellow">{id}</strong></td>
+                    <td>Atualiza as informações sobre a tarefa informada.</td>
+                </tr>
+                <tr">
+                    <td class="red bold">DELETE</td>
+                    <td>/api/v1/tasks/<strong class="yellow">{id}</strong></td>
+                    <td>Deleta do sistema a tarefa informada.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    {% bootstrap_javascript jquery='full' %} 
+{% endblock %}
+ 
