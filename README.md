@@ -44,11 +44,13 @@ Link para a [aplicação](https://listadetarefas-django.herokuapp.com/)
     Listagem das tarefas com o método GET
     <img alt="Listagem de Tarefas" src="./github/listagem.png"/>
     Adição de novas tarefas com o método POST
-    <img alt="Listagem de Tarefas" src="./github/post.gif"/>
+    <img alt="Adição de Tarefas" src="./github/post.gif"/>
     Edição das tarefas com o método PUT
-    <img alt="Listagem de Tarefas" src="./github/put.gif"/>
+    <img alt="Edição das Tarefas" src="./github/put.gif"/>
     Exclusão das tarefas com o método DELETE
-    <img alt="Listagem de Tarefas" src="./github/delete.gif"/>
+    <img alt="Exclusão dos dados" src="./github/delete.gif"/>
+    Filtro dos dados
+    <img alt="Filtro dos dados" src="./github/filtros.gif"/>
 </h1>
 
 
