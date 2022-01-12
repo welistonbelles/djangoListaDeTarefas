@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'account/css/account.css' %}">
+<script src="{% static 'account/js/account.js' %}"></script>
+
+    <div class="content-account">
+        <div class="register-area">
+            <div class="title">
+                <h2>
+                    Cadastrar Conta
+                </h2>
+            </div>
+            <form action="POST">
+                <h4>E-mail</h4>
+                <input type="email" id="Account-email" placeholder="E-mail" autofocus="true" required>
+                <h4>Usuário</h4>
+                <input type="text" id="Account-user" placeholder="Usuário" required>
+                <h4>Senha</h4>
+                <input type="password" id="Account-password" placeholder="Senha" required>
+                <div class="button-actions">
+                    <button type="button" class="register" onclick="requestRegisterAccount()"><i class="fas fa-plus green"></i> Cadastrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

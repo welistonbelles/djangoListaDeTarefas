@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth import get_user_model
 
 # SIGNALS
 from django.db.models import signals
@@ -17,6 +18,8 @@ class Task(Base):
         ('Medio', 'Medio'),
         ('Dificil', 'Dificil')
     )
+
+    author = models.ForeignKey(get_user_model(), verbose_name='Autor', on_delete=models.CASCADE)
     title = models.CharField('Titulo', max_length=100)
     description = models.CharField('Descrição', max_length=300)
     completed = models.BooleanField('Concluída?', default=False)
@@ -33,7 +36,6 @@ class Task(Base):
 
 
 def duration_pre_save(signal, instance, sender, **kwargs):
-    print(instance.complexity)
     if instance.complexity == 'Dificil':
         instance.duration = '+8hrs'
     elif instance.complexity == 'Medio':

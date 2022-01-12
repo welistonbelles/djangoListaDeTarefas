@@ -3,23 +3,61 @@
 {% load bootstrap4 %}
 
 {% block content %}
-    <div class="tasks">
-        {% if user.is_anonymous %}
-            <script>
-                getTasks();
-            </script>
-        {% else %}
-            <script>
-                getTasks(false);
-            </script>
-        {% endif %}
-        
-        <div class="first-row">
-        </div>
-        <div class="second-row">
-        </div>
-        <div class="pagination-row">
+    <div class="content-actions-task">
+                    
+                        
+                    
+    </div>
+    <div class="content-actions">
+        {% if not user.is_anonymous %}
+            <button onclick="addNewTask(false)"> <i class="fas fa-plus green"></i> Adicionar Tarefa</button>
+        {% endif %} 
+    </div>
+    <div class="content">
+        <div class="tasks">
+            {% if user.is_anonymous %}
+                <script>
+                    getTasks();
+                </script>
+            {% else %}
+                <script>
+                    getTasks(false);
+                </script>
+            {% endif %}
+            <div class="filters">
+                <div class="title">
+                    <h3>Filters</h3>
+                </div>
+                <div class="remove">
+                    <a href="{{ index }}"><i class="far fa-trash-alt red"></i> Remover Filtros</a>
+                </div>
+                <div class="complexity">
+                    Complexidade
+                    <select name="complexity" id="complexity" onchange="filterComplexity(this)">
+                        <option value="None">Sem Filtro</option>
+                        <option value="Facil">Fácil</option>
+                        <option value="Medio">Médio</option>
+                        <option value="Dificil">Difícil</option>
+                    </select>
+                </div>
+                <div class="completed">
+                    Completa? <a class="complete" name="complete" onclick="filterCompleted(this)"><i class="far fa-check-square gray"></i></a>
+                    <a class="notComplete" name="notComplete" onclick="filterCompleted(this)"><i class="far fa-window-close gray"></i></a>
+                </div>
+            </div>
+            <div class="loading">
+                <i class='fa fa-circle-o-notch fa-spin'></i>
+            </div>
+            <div class="rows">
+                <div class="first-row">
+                </div>
+                <div class="second-row">
+                </div>
+                <div class="pagination-row">
+                </div>
+            </div>
         </div>
     </div>
+
     {% bootstrap_javascript jquery='full' %} 
 {% endblock %}
