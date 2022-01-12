@@ -25,11 +25,15 @@ Consiste em uma lista de tarefas que podem ou não estarem finalizadas. Este pro
 </ul>
 
 # Funcionalidades
+- [x] Criar uma conta.
+- [x] Realizar login.
 - [x] Adicionar uma nova tarefa.
 - [x] Editar uma tarefa.
 - [x] Deletar uma tarefa.
 - [x] Listar as tarefas.
+- [x] Filtrar as tarefas.
 - [x] Paginação.
+- [x] Responsividade.
 - [x] Utilização de Signals ao registrar/editar uma tarefa.
 - [x] Authorização para consumo da API via Token.
 - [x] Testes unitários da API.
