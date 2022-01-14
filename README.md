@@ -37,6 +37,7 @@ Consiste em uma lista de tarefas que podem ou não estarem finalizadas. Este pro
 - [x] Utilização de Signals ao registrar/editar uma tarefa.
 - [x] Authorização para consumo da API via Token.
 - [x] Testes unitários da API.
+- [x] Autenticação de 2 Fatores.
 
 # Demonstracao
 Link para a [aplicação](https://listadetarefas-django.herokuapp.com/)
