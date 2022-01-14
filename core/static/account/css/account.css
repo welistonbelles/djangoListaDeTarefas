@@ -68,6 +68,7 @@
     border-radius: 4px;
     padding-left: 5px;
 }
+/*
 
 .login-area form input[type="text"],
 .login-area form input[type="email"],
@@ -79,6 +80,7 @@
     border-radius: 4px;
     padding-left: 5px;
 }
+*/
 
 .register-area form h4 {
     color: white;
@@ -115,4 +117,56 @@
 .register-area .button-actions .register:hover,
 .login-area .button-actions .login:hover {
     background-color: #2c4572;
+}
+
+.login-area form table {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-area  form tbody {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-area  form tbody tr {
+    display:flex;
+    flex-direction: column;
+    width: 70%;
+    height: 50%;
+}
+
+.login-area form table tr th {
+    width: 100%;
+    height: 50%;
+    font-size: 22px;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+}
+
+.login-area form table tr td {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-area form table tr td input[type="text"],
+.login-area form table tr td input[type="password"] {
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding-left: 5px;
+    margin-bottom: 2px;
+    background-color: rgba(255, 255, 255, 0.678);
+    font-weight: 700;
 }

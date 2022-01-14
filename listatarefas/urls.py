@@ -18,12 +18,14 @@ from django.urls import path, include
 
 from django.conf.urls.static import static
 from django.conf import settings
+from two_factor.urls import urlpatterns as tf_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
     path('account/create/', include('account.urls')),
     path('account/api/', include('account.urls')),
-    path('account/', include('django.contrib.auth.urls')),
+    # path('account/', include('django.contrib.auth.urls')),
     path('auth/', include('rest_framework.urls')),
+    path('', include(tf_urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -56,6 +56,11 @@ INSTALLED_APPS = [
     # Apps
     'core',
     'account',
+    # 2FA
+    'django_otp',
+    'django_otp.plugins.otp_static',
+    'django_otp.plugins.otp_totp',
+    'two_factor',
 ]
 
 MIDDLEWARE = [
@@ -65,6 +70,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django_otp.middleware.OTPMiddleware', # 2FA
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -152,8 +158,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = 'index'
-LOGOUT_REDIRECT_URL = 'index'
+LOGIN_URL = 'two_factor:login'
+LOGIN_REDIRECT_URL = 'two_factor:profile'
+LOGOUT_REDIRECT_URL = 'two_factor:profile'
 
 # DRF
 REST_FRAMEWORK = {
