@@ -32,7 +32,8 @@
                         </div>
                     {% else %}
                         <div class="button-logout">
-                            <button onclick="doLogout()">Logout</button>
+                            <a href="{% url 'two_factor:profile' %}">Security</a>
+                            <a onclick="doLogout()">Logout</a>
                         </div>
                     {% endif %}
                 </div>

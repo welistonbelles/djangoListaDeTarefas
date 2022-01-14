@@ -1,0 +1,38 @@
+{% extends "two_factor/_base.html" %}
+{% load i18n two_factor %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'account/css/account.css' %}">
+    <script src="{% static 'account/js/account.js' %}"></script>
+    <div class="content-security">
+        <div class="title">
+            <h1>Segurança da Conta</h1>
+        </div>
+        <div class="body">
+            {% if default_device %}
+                <h3>Desabilitar a verificação em duas etapas</h3>
+                <p>
+                    Apesar de nós o desencorajarmos fortemente a fazer isso, 
+                    você também pode desabilitar a verificação em duas etapas de sua conta.
+                </p> <br> <br>
+                <a href="{% url 'two_factor:disable' %}" class="btn-factor disable">
+                    <i class="fas fa-lock-open"></i>
+                    Desabilitar a verificação de duas etapas
+                </a>
+            
+            {% else %}
+                <p>
+                    Verificação em duas etapas não está habilitada para a sua conta. <br>
+                    Habilite a verificação em duas etapas para aprimorar a segurança de sua conta.
+                </p> <br> <br>
+
+                <a href="{% url 'two_factor:setup' %}" class="btn-factor enable">
+                    <i class="fas fa-lock"></i>
+                    Habilitar a autenticação em duas etapas.
+                </a>
+            {% endif %}
+        </div>
+
+    </div>
+
+{% endblock %}

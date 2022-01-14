@@ -25,7 +25,7 @@ urlpatterns = [
     path('', include('core.urls')),
     path('account/create/', include('account.urls')),
     path('account/api/', include('account.urls')),
-    # path('account/', include('django.contrib.auth.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('auth/', include('rest_framework.urls')),
     path('', include(tf_urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

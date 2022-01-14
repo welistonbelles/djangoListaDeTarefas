@@ -7,7 +7,7 @@ function registerAccount() {
 }
 
 function doLogout() {
-    window.location.href = "http://localhost:8000/admin/logout/"
+    window.location.href = "http://localhost:8000/accounts/logout/"
 }
 
 function getTasks() {

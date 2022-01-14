@@ -158,8 +158,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_URL = 'two_factor:login'
-LOGIN_REDIRECT_URL = 'two_factor:profile'
+LOGIN_URL = 'index'
+LOGIN_REDIRECT_URL = 'index'
 LOGOUT_REDIRECT_URL = 'two_factor:profile'
 
 # DRF

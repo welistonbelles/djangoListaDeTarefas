@@ -1,0 +1,51 @@
+{% extends "two_factor/_base_focus.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'account/css/account.css' %}">
+    <script src="{% static 'account/js/account.js' %}"></script>
+
+    {% if wizard.steps.current == 'welcome' %}
+    <div class="content-security">
+    {% elif wizard.steps.current == 'generator' %}
+    <div class="content-security-generator">
+    {% endif %}
+    
+        <div class="title">
+            <h1>Segurança da Conta</h1>
+        </div>
+        <div class="sub-title">
+            <h2>Habilitar a verificação em duas etapas</h2>
+        </div>
+        <div class="body">
+            {% if wizard.steps.current == 'welcome' %}
+                <p>
+                    Você está prestes a levar a segurança de sua conta para o próximo nível.<br>
+                    Siga os passos deste assistente para habilitar a verificação em duas etapas.
+                </p>
+            {% elif wizard.steps.current == 'generator' %}
+                <p>
+                    Para começar a usar um gerador de códigos, por favor use seu celular para escanear o código QR abaixo.<br>
+                    Por exemplo, use o Google Authenticator. Em seguida, digite o código gerado pelo aplicativo.</p>
+                <p><img src="{{ QR_URL }}" alt="QR Code" /></p>
+            {% endif %}
+          
+            <form action="" method="post">{% csrf_token %}
+              {% include "two_factor/_wizard_forms.html" %}
+          
+              {# hidden submit button to enable [enter] key #}
+              <div class="btn-actions">
+                  <a href="{{ cancel_url }}" class="btn-factor-back">
+                      <i class="fas fa-arrow-circle-left"></i> Voltar
+                  </a>
+  
+                <button type="submit" class="btn-factor-confirm">
+                    <i class="fas fa-arrow-circle-right"></i>Confirmar
+                </button>
+              </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

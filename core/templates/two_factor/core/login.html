@@ -18,6 +18,12 @@
                     <button type="submit" class="login"><i class="fas fa-plus green"></i> Acessar</button>
                     <!--{% include "two_factor/_wizard_actions.html" %}-->
                 </div>
+                <script>
+                    var user = document.querySelector("#id_auth-username")
+                    user.placeholder = "Informe seu usuário..."
+                    var user = document.querySelector("#id_auth-password")
+                    user.placeholder = "Informe sua senha..."
+                </script>
             </form>
         </div>
     </div>

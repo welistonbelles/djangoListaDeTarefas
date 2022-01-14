@@ -86,8 +86,19 @@ header .content .login-area .button-logout {
     margin-right: 5px;
 }
 
+header .content .login-area .button-logout a {
+    width: 100%;
+    max-width: 100%;;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+    text-decoration: none;
+    font-size: 14px;
+}
 
-header .content button {
+header .content button,
+header .content .login-area .button-logout a {
     width: 47.5%;
     height: 70%;
     border: 1px solid white;
